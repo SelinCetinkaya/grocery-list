@@ -1,14 +1,14 @@
-# grocery-list
+# Stock-Up
 
 # Project Overview
 
 ## Project Name
 
-The name of your project.
+Stock-Up
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and/or functionality.
+Grocery shopping is many people's least favorite chore. Part of the reason for this is the overwhelming feeling of all of the options and being surrounded by so many people in such a large space. Even if you come with a list, it's frequently unorganized and leaves you running back and forth from section to section. Stock-Up is an app to help categorize your grocery list in an easy-to-use format, allowing you to streamline your trips to the grocery store, making them just a little more fun.
 
 ## Wireframes
 
