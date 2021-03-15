@@ -19,40 +19,37 @@ Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/u
 
 ## API and Data Sample
 
-Show us a snippet of JSON returned by your Airtable (you can find it under the API documentation) so we know you can access it and get the info you need. This __must__ be properly formatted. An example is below:
-
 ```json
 {
     "records": [
         {
-            "id": "recONRzIUTuZ5lXaF",
+            "id": "recHUbTKDqc6ubmsL",
             "fields": {
-                "author": "Liz Yrineo",
-                "setup": "Why did the tomato turn red?",
-                "punchline": "Because it saw the salad dressing!"
+                "title": "greek yogurt",
+                "brand": "Fage",
+                "category": "dairy",
+                "notes": "the one with the highest fat content"
             },
-            "createdTime": "2020-11-30T16:03:09.000Z"
+            "createdTime": "2021-03-14T20:37:56.000Z"
         },
         {
-            "id": "rec3oYZ5Tp0AIDsKe",
+            "id": "recUNkaQwyBaa5Mzl",
             "fields": {
-                "author": "Rachel Moskowitz",
-                "setup": "What did the green grape say to the red grape?",
-                "punchline": "Breathe, idiot, breathe!"
+                "title": "avocados",
+                "category": "produce"
             },
-            "createdTime": "2020-11-30T16:03:09.000Z"
+            "createdTime": "2021-03-14T20:37:56.000Z"
         },
         {
-            "id": "recA34tOaoE1IVeC1",
+            "id": "recqOjHra4f0eXZbs",
             "fields": {
-                "author": "Gary Grant",
-                "setup": "How do you make holy water?",
-                "punchline": "You boil the hell out of it!"
+                "title": "spaghetti",
+                "category": "pantry",
+                "notes": "if no spaghetti, get linguini"
             },
-            "createdTime": "2020-11-30T16:03:09.000Z"
+            "createdTime": "2021-03-14T20:37:56.000Z"
         }
-    ],
-    "offset": "recA34tOaoE1IVeC1"
+    ]
 }
 ```
 
@@ -61,17 +58,20 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
 The functionality will then be divided into two separate lists: MVP and PostMVP.  Carefully decide what is placed into your MVP, as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Create and use external api 
+- Render data by category
+- Ability to add a new grocery list item
+- When list items are checked off they move to the "in the cart" section
+- Use tabs to navigate between categories
+- create at least 6 separate react components
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Adding an additional subcategory to organize by recipe
+- Adding a saved/favorites log to save previously shopped items
+- Include welcome screen
 
 ## Project Schedule
 
@@ -79,12 +79,12 @@ This schedule will be used to keep track of your progress throughout the week an
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
+|March 12-14| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|March 15| Project Approval | Incomplete
+|March 16| Core Application Structure (HTML, CSS, React Components Created) | Incomplete
+|March 17| Successful GET/POST API Calls | Incomplete
+|March 18| MVP Complete / Begin Post-MVP  | Incomplete
+|March 19| Post-MVP / Styling | Incomplete
 |July 17| Presentations | Incomplete
 
 ## Timeframes
