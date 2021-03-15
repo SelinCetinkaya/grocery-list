@@ -15,7 +15,7 @@ Grocery shopping is many people's least favorite chore. Part of the reason for t
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
 ## Component Hierarchy
-Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
+[Component Hierarchy](https://imgur.com/zQWqhri)
 
 ## API and Data Sample
 
@@ -64,14 +64,16 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 - Ability to add a new grocery list item
 - When list items are checked off they move to the "in the cart" section
 - Use tabs to navigate between categories
-- create at least 6 separate react components
+- Create at least 6 separate react components
+- Adding edit functionality to form
 
 #### PostMVP  
 
 - Adding an additional subcategory to organize by recipe
 - Adding a saved/favorites log to save previously shopped items
 - Include welcome screen
-- Adding edit functionality to form
+- Ability to add/delete categories
+- Clear All button for when a user is finished shopping
 
 ## Project Schedule
 
