@@ -67,7 +67,6 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 - create at least 6 separate react components
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
 - Adding an additional subcategory to organize by recipe
 - Adding a saved/favorites log to save previously shopped items
@@ -85,7 +84,7 @@ This schedule will be used to keep track of your progress throughout the week an
 |March 17| Successful GET/POST API Calls | Incomplete
 |March 18| MVP Complete / Begin Post-MVP  | Incomplete
 |March 19| Post-MVP / Styling | Incomplete
-|July 17| Presentations | Incomplete
+|March 22| Presentations | Incomplete
 
 ## Timeframes
 
@@ -102,9 +101,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ## SWOT Analysis
 
 ### Strengths:
+I am basing this project on what I would find helpful in my daily life, so I have a very clear understanding of the problem that I am trying to solve. I put a lot fo thought into conceptualizing this app before I wrote anything down so I am very familiar with what I think should be part of MVP and Post-MVP. Additionally, I spent a lot fo time on my wireframe so I feel good about how I will be structuring the components.
 
 ### Weaknesses:
+Styling has been a weakness of mine in the past. I look forward to exploring the possibilities that come with using a CSS library and getting more comfortable with styling in general.
 
 ### Opportunities:
+Since this is an app based on a real-life problem that I experience, I am excited to not only get it functional for this project, but also work on it post-course to add additional functionality that I think would be helpful. It will be fun to be able to shpw off everything that I have learned so far in an app that I genuinely believe I would use in my personal life.
 
 ### Threats:
+I tend to avoid things that I know I won't get right the first time. I will need to remind myself that this is my opporunity to get uncomfortable and push myself to learn and become a better software engineer, even if that means getting something wrong the first time around.
