@@ -71,6 +71,7 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 - Adding an additional subcategory to organize by recipe
 - Adding a saved/favorites log to save previously shopped items
 - Include welcome screen
+- Adding edit functionality to form
 
 ## Project Schedule
 
@@ -94,9 +95,17 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Successful API Calls | H | 2hrs| hrs | hrs |
+| Familiarize Self with CSS Framework | H | 3hrs| hrs | hrs |
+| Basic Structural CSS | H | 3hrs| hrs | hrs |
+| Create Form Component | H | 1.5hrs| hrs | hrs |
+| POST Functionality via Form Component | H | 3hrs| hrs | hrs |
+| GET Functionality via Form Component | H | 2hrs| hrs | hrs |
+| PUT Functionality via Form Component | H | 4hrs| hrs | hrs |
+| Render API Data to Page | H | 5hrs| hrs | hrs |
+| toggleFetch Functionality | H | 4hrs| hrs | hrs |
+| Create Header | H | 2hrs| hrs | hrs |
+| Total | H | hrs| hrs | hrs |
 
 ## SWOT Analysis
 
