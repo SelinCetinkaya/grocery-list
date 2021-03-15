@@ -106,18 +106,18 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Successful API Calls | H | 2hrs| hrs | hrs |
-| Familiarize Self with CSS Framework | H | 3hrs| hrs | hrs |
+| Familiarize Self with CSS Framework | M | 3hrs| hrs | hrs |
 | Basic Structural CSS | H | 3hrs| hrs | hrs |
 | Create Form Component | H | 1.5hrs| hrs | hrs |
 | POST Functionality via Form Component | H | 4hrs| hrs | hrs |
-| GET Functionality via Form Component | H | 3hrs| hrs | hrs |
+| GET Functionality via Form Component | M | 3hrs| hrs | hrs |
 | PUT Functionality via Form Component | H | 4hrs| hrs | hrs |
 | Render Category Tabs to Page | H | 4hrs| hrs | hrs |
 | Render Needed Items in List to Page | H | 3hrs| hrs | hrs |
 | Render Retrieved Items List to Page | H | 3hrs| hrs | hrs |
-| Functionality to Move Needed Items to Retrieved List | H | 4hrs| hrs | hrs |
+| Functionality to Move Needed Items to Retrieved List | M | 4hrs| hrs | hrs |
 | toggleFetch Functionality | H | 4hrs| hrs | hrs |
-| Create Header | H | 2hrs| hrs | hrs |
+| Create Header | M | 2hrs| hrs | hrs |
 | Total | H | 40.5hrs| hrs | hrs |
 
 ## SWOT Analysis
