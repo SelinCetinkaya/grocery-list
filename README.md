@@ -99,17 +99,19 @@ This app is meant to be used on a mobile phone so I will be focusing on designin
 | Successful API Calls | H | 2hrs| hrs | hrs |
 | Familiarize Self with CSS Framework | M | 3hrs| hrs | hrs |
 | Basic Structural CSS | H | 3hrs| hrs | hrs |
+| Media Query Styling | H | 3hrs| hrs | hrs |
 | Create Form Component | H | 1.5hrs| hrs | hrs |
 | POST Functionality via Form Component | H | 4hrs| hrs | hrs |
 | GET Functionality via Form Component | M | 3hrs| hrs | hrs |
 | PUT Functionality via Form Component | H | 4hrs| hrs | hrs |
+| DELETE Functionality via Form Component | H | 3hrs| hrs | hrs |
 | Render Category Tabs to Page | H | 4hrs| hrs | hrs |
-| Render Needed Items in List to Page | H | 3hrs| hrs | hrs |
-| Render Retrieved Items List to Page | H | 3hrs| hrs | hrs |
-| Functionality to Move Needed Items to Retrieved List | M | 4hrs| hrs | hrs |
+| Render Shopping List Items in List to Page | H | 3hrs| hrs | hrs |
+| Render Shopping Cart Items List to Page | H | 3hrs| hrs | hrs |
+| Functionality to Move Shopping List Items to Shopping Cart List | M | 1hrs| hrs | hrs |
 | toggleFetch Functionality | H | 4hrs| hrs | hrs |
 | Create Header | M | 2hrs| hrs | hrs |
-| Total | H | 40.5hrs| hrs | hrs |
+| Total | H | 43.5hrs| hrs | hrs |
 
 ## SWOT Analysis
 
@@ -120,7 +122,7 @@ I am basing this project on what I would find helpful in my daily life, so I hav
 Styling has been a weakness of mine in the past. I look forward to exploring the possibilities that come with using a CSS library and getting more comfortable with styling in general.
 
 ### Opportunities:
-Since this is an app based on a real-life problem that I experience, I am excited to not only get it functional for this project, but also work on it post-course to add additional functionality that I think would be helpful. It will be fun to be able to shpw off everything that I have learned so far in an app that I genuinely believe I would use in my personal life.
+Since this is an app based on a real-life problem that I experience, I am excited to not only get it functional for this project, but also work on it post-course to add additional functionality that I think would be helpful. It will be fun to be able to show off everything that I have learned so far in an app that I genuinely believe I would use in my personal life.
 
 ### Threats:
 I tend to avoid things that I know I won't get right the first time. I will need to remind myself that this is my opporunity to get uncomfortable and push myself to learn and become a better software engineer, even if that means getting something wrong the first time around.
