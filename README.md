@@ -12,7 +12,14 @@ Grocery shopping is many people's least favorite chore. Part of the reason for t
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+The items in the API are rendered by category and then into two subcategories (still needed, and already retrieved). When the user checks the box next to each item in the top section, it will move to the bottom section. Additionally, a user can edit and add items from the same page. 
+
+This app is meant to be used on a mobile phone so I will be focusing on designing for smartphones.
+[Smartphone Wireframe](https://i.imgur.com/MFSAH7f.png)
+
+[Tablet Wireframe](https://i.imgur.com/qOoPy2b.png)
+
+[Desktop Wireframe](https://i.imgur.com/KLk3oET.png)
 
 ## Component Hierarchy
 [Component Hierarchy](https://imgur.com/zQWqhri)
