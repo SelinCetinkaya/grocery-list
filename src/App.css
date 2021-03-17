@@ -4,15 +4,17 @@
 
 #header {
   height: 50px;
-  background-color: rgb(216, 136, 114);
+  background-color: rgb(193, 217, 230);
   text-align: left;
 }
 
 #shopping-list, #shopping-cart {
   display: flex;
   flex-direction: column;
+  /* flex-wrap: wrap; */
   align-items: center;
   border: solid grey 1px;
+  /* max-height: 200px; */
 }
 
 #list {

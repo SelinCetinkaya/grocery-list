@@ -1,16 +1,47 @@
 import { Route } from "react-router-dom";
 import "./App.css";
-import { useState } from "react";
+import { baseURL, config } from "./services";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import CategoryContent from "./components/CategoryContent";
 import CategoryTabs from "./components/CategoryTabs";
 import ShoppingCart from "./components/ShoppingCart";
-import NewForm from "./components/Form";
+import NewForm from "./components/NewForm";
+import EditForm from "./components/EditForm";
 
 function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
   const [data, setData] = useState({});
   const [toggleFetch, setToggleFetch] = useState(false);
+
+  const getItemsInCategory = async () => {
+    const response = await axios.get(
+      `${baseURL}/stock-up?filterByFormula=%7BisInCart%7D+%3D+0`,
+      config
+    );
+    categoriesReduce(response.data.records);
+  };
+
+  const categoriesReduce = (items) => {
+    const reduced = items.reduce((acc, item) => {
+      if (!acc[item.fields.category]) {
+        acc[item.fields.category] = [];
+      }
+      acc[item.fields.category].push(item);
+      return acc;
+    }, {});
+    console.log(reduced);
+    setData(reduced);
+  };
+
+  // const categoriesArr = Object.entries(categories);
+
+  useEffect(() => {
+    getItemsInCategory();
+    // console.log(toggleFetch);
+    // console.log(data);
+  }, [toggleFetch]);
 
   return (
     <div className="App">
@@ -37,6 +68,14 @@ function App() {
           />
         </Route>
       </div>
+      <Route path="/category/:category/edit/:id">
+        <EditForm
+          setToggleFetch={setToggleFetch}
+          toggleFetch={toggleFetch}
+          setData={setData}
+          data={data}
+        />
+      </Route>
       <div id="shopping-cart">
         <ShoppingCart
           data={data}

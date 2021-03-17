@@ -16,22 +16,22 @@ function CategoryContent({
   const { category } = useParams();
   const history = useHistory();
 
-  const getItemsInCategory = async () => {
-    if (data[category]) return;
-    const response = await axios.get(
-      `${baseURL}/stock-up?filterByFormula=%7Bcategory%7D+%3D+%22${category}%22`,
-      config
-    );
-    const items = response.data.records.filter((item) => !item.fields.isInCart);
-    console.log(items);
-    setData({ ...data, [category]: items });
-  };
+  // const getItemsInCategory = async () => {
+  //   if (data[category]) return;
+  //   const response = await axios.get(
+  //     `${baseURL}/stock-up?filterByFormula=%7Bcategory%7D+%3D+%22${category}%22`,
+  //     config
+  //   );
+  //   const items = response.data.records.filter((item) => !item.fields.isInCart);
+  //   console.log(items);
+  //   setData({ ...data, [category]: items });
+  // };
 
-  useEffect(() => {
-    getItemsInCategory();
-    console.log(toggleFetch);
-    console.log(data);
-  }, [category, toggleFetch]);
+  // useEffect(() => {
+  //   getItemsInCategory();
+  //   console.log(toggleFetch);
+  //   console.log(data);
+  // }, [category, toggleFetch]);
 
   function onChange(e) {
     const item = e.target.value;
@@ -61,23 +61,28 @@ function CategoryContent({
 
   return (
     <div>
+      <h2>Shopping List:</h2>
       <List
         itemLayout="horizontal"
         dataSource={data[category]}
         renderItem={(item) => (
-          <List.Item className="list-item">
-            <Checkbox
-              onChange={onChange}
-              value={item}
-              checked={false}
-              key={item.id}
-            >
-              {item.fields.title}
-              <br /> {item.fields.brand}
-              <br /> {item.fields.notes}
-            </Checkbox>
-            {/* <button onClick={deleteItem}>delete</button> */}
-          </List.Item>
+          <div>
+            <List.Item className="list-item">
+              <Checkbox
+                onChange={onChange}
+                value={item}
+                checked={false}
+                key={item.id}
+              >
+                {item.fields.title}
+                <br /> {item.fields.brand}
+                <br /> {item.fields.notes}
+              </Checkbox>
+              <Link to={`/category/${category}/edit/${item.id}`}>
+                <button>edit</button>
+              </Link>
+            </List.Item>
+          </div>
         )}
       />
       <Link to={`/category/${category}/new`}>
