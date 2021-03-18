@@ -49,18 +49,20 @@ function ShoppingCart({ itemsInCart, setItemsInCart, setData, data }) {
     //   ))}
     // </div>
     <div>
-      <h2>In Cart:</h2>
       <List
+        className="unordered-list"
         itemLayout="horizontal"
         dataSource={itemsInCart}
         renderItem={(item) => (
           <List.Item className="list-item">
             <Checkbox onChange={onChange} checked value={item} key={item.id}>
-              {item.fields.title}
+              <span className="list-item-title">{item.fields.title}</span>
               <br />
-              Brand : {item.fields.brand}
-              <br />
-              Notes: {item.fields.notes}
+              <span className="list-item-brand-notes">
+                Brand : {item.fields.brand}
+                <br />
+                Notes: {item.fields.notes}
+              </span>
             </Checkbox>
           </List.Item>
         )}

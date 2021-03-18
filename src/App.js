@@ -59,6 +59,14 @@ function App() {
             toggleFetch={toggleFetch}
           />
         </Route>
+        <Route path="/category/:category/edit/:id">
+          <EditForm
+            setToggleFetch={setToggleFetch}
+            toggleFetch={toggleFetch}
+            setData={setData}
+            data={data}
+          />
+        </Route>
         <Route path="/category/:category/new">
           <NewForm
             setItemsInCart={setItemsInCart}
@@ -70,14 +78,7 @@ function App() {
         </Route>
       </div>
       <hr />
-      <Route path="/category/:category/edit/:id">
-        <EditForm
-          setToggleFetch={setToggleFetch}
-          toggleFetch={toggleFetch}
-          setData={setData}
-          data={data}
-        />
-      </Route>
+      <h2>In Cart:</h2>
       <div id="shopping-cart">
         <ShoppingCart
           data={data}

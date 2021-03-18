@@ -3,7 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services";
-import { Checkbox, Row, Col, List } from "antd";
+import { Checkbox, List } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
 function CategoryContent({
   data,
@@ -64,30 +65,34 @@ function CategoryContent({
   return (
     <div>
       <List
+        className="unordered-list"
         itemLayout="horizontal"
         dataSource={data[category]}
         renderItem={(item) => (
-          <div>
-            <List.Item className="list-item">
-              <Checkbox
-                onChange={onChange}
-                value={item}
-                checked={false}
-                key={item.id}
-              >
-                {item.fields.title}
+          <List.Item className="list-item">
+            <Checkbox
+              onChange={onChange}
+              value={item}
+              checked={false}
+              key={item.id}
+            >
+              <span className="list-item-title">{item.fields.title}</span>
+              <span className="list-item-brand-notes">
                 <br /> {item.fields.brand}
                 <br /> {item.fields.notes}
-              </Checkbox>
-              <Link to={`/category/${category}/edit/${item.id}`}>
-                <button>edit</button>
-              </Link>
-            </List.Item>
-          </div>
+              </span>
+            </Checkbox>
+            <Link to={`/category/${category}/edit/${item.id}`}>
+              <button>edit</button>
+            </Link>
+          </List.Item>
         )}
       />
       <Link to={`/category/${category}/new`}>
-        <button>add item</button>
+        <button>
+          <PlusOutlined />
+          add item
+        </button>
       </Link>
     </div>
   );

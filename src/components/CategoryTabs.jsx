@@ -30,7 +30,7 @@ function CategoryTabs() {
         mode="horizontal"
       >
         {categories.map((category) => (
-          <Menu.Item key={category.id}>
+          <Menu.Item className="category-names" key={category.id}>
             <Link to={`/category/${category.fields.name}`}>
               {category.fields.name}
             </Link>

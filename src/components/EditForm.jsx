@@ -79,8 +79,13 @@ function EditForm({ toggleFetch, setToggleFetch, data, setData }) {
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
+        <Button htmlType="delete" onClick={deleteItem}>
+          delete
+        </Button>
       </Form.Item>
-      <button onClick={deleteItem}>delete</button>
+      <button onClick={() => history.push(`/category/${category}`)}>
+        cancel
+      </button>
     </Form>
   );
 }
