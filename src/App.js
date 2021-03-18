@@ -14,6 +14,8 @@ function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
   const [data, setData] = useState({});
   const [toggleFetch, setToggleFetch] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [visibleEdit, setVisibleEdit] = useState(false);
 
   const getItemsInCategory = async () => {
     const response = await axios.get(
@@ -53,6 +55,10 @@ function App() {
             data={data}
             setToggleFetch={setToggleFetch}
             toggleFetch={toggleFetch}
+            visible={visible}
+            setVisible={setVisible}
+            visibleEdit={visibleEdit}
+            setVisibleEdit={setVisibleEdit}
           />
         </Route>
         <Route path="/category/:category/edit/:id">
@@ -61,6 +67,8 @@ function App() {
             toggleFetch={toggleFetch}
             setData={setData}
             data={data}
+            visibleEdit={visibleEdit}
+            setVisibleEdit={setVisibleEdit}
           />
         </Route>
         <Route path="/category/:category/new">
@@ -70,6 +78,8 @@ function App() {
             setData={setData}
             setToggleFetch={setToggleFetch}
             toggleFetch={toggleFetch}
+            visible={visible}
+            setVisible={setVisible}
           />
         </Route>
       </div>

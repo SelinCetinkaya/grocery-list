@@ -2,11 +2,19 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services";
-import { Checkbox, List } from "antd";
+import { Checkbox, List, Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
-function CategoryContent({ data, setData, setItemsInCart, itemsInCart }) {
+function CategoryContent({
+  data,
+  setData,
+  setItemsInCart,
+  itemsInCart,
+  visible,
+  setVisible,
+}) {
   const { category } = useParams();
+
   const history = useHistory();
 
   // const getItemsInCategory = async () => {
@@ -46,6 +54,10 @@ function CategoryContent({ data, setData, setItemsInCart, itemsInCart }) {
     setItemsInCart([...itemsInCart, item]);
   };
 
+  const showModal = () => {
+    setVisible(true);
+  };
+
   // if (!data[category]) return <div>loading</div>;
 
   // const deleteItem = async (e) => {
@@ -81,10 +93,9 @@ function CategoryContent({ data, setData, setItemsInCart, itemsInCart }) {
         )}
       />
       <Link to={`/category/${category}/new`}>
-        <button id="add-item-button">
-          <PlusOutlined />
-          add item
-        </button>
+        <Button type="primary" onClick={showModal}>
+          <PlusOutlined /> Add New Item
+        </Button>
       </Link>
     </div>
   );
