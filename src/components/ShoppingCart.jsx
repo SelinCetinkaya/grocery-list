@@ -16,10 +16,12 @@ function ShoppingCart({ itemsInCart, setItemsInCart, setData, data }) {
     getItemsInCart();
   }, []);
 
-  function onChange(e) {
+  async function onChange(e) {
     const item = e.target.value;
     removeFromCart(item);
     addToData(item);
+    const newItem = { fields: { ...item.fields, isInCart: 0 } };
+    await axios.put(`${baseURL}/stock-up/${item.id}`, newItem, config);
   }
 
   const removeFromCart = (item) => {

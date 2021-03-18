@@ -8,47 +8,45 @@ function EditForm({ toggleFetch, setToggleFetch, data, setData }) {
   const [titleValue, setTitleValue] = useState("");
   const [brandValue, setBrandValue] = useState("");
   const [notesValue, setNotesValue] = useState("");
-  const [category, setCategory] = useState("");
-  const params = useParams();
+  // const [category, setCategory] = useState("");
+  const { category, id } = useParams();
   const history = useHistory();
 
   useEffect(() => {
-    if (params.id) {
-      const groceryItem = data[params.category].find(
-        (item) => item.id === params.id
-      );
+    if (id && data[category]) {
+      const groceryItem = data[category].find((item) => item.id === id);
+      console.log(groceryItem);
       if (groceryItem) {
-        setTitleValue(groceryItem.title);
-        setBrandValue(groceryItem.brand);
-        setNotesValue(groceryItem.notes);
-        setCategory(params.category);
+        setTitleValue(groceryItem.fields.title);
+        setBrandValue(groceryItem.fields.brand);
+        setNotesValue(groceryItem.fields.notes);
       }
     }
-  }, []);
+  }, [id, data]);
 
   const handleSubmit = async () => {
     console.log(data);
     const editedItem = {
       title: titleValue,
-      category: params.category,
+      category: category,
       brand: brandValue,
       notes: notesValue,
       isInCart: 0,
     };
     await axios.put(
-      `${baseURL}/stock-up/${params.id}`,
+      `${baseURL}/stock-up/${id}`,
       { fields: editedItem },
       config
     );
     setToggleFetch((curr) => !curr);
-    history.push(`/category/${params.category}`);
+    history.push(`/category/${category}`);
   };
 
   const deleteItem = async (e) => {
     e.preventDefault();
-    await axios.delete(`${baseURL}/stock-up/${params.id}`, config);
+    await axios.delete(`${baseURL}/stock-up/${id}`, config);
     setToggleFetch((curr) => !curr);
-    history.push(`/category/${params.category}`);
+    history.push(`/category/${category}`);
   };
 
   return (

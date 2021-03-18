@@ -33,10 +33,12 @@ function CategoryContent({
   //   console.log(data);
   // }, [category, toggleFetch]);
 
-  function onChange(e) {
+  async function onChange(e) {
     const item = e.target.value;
     removeFromList(item);
     addToCart(item);
+    const newItem = { fields: { ...item.fields, isInCart: 1 } };
+    await axios.put(`${baseURL}/stock-up/${item.id}`, newItem, config);
   }
 
   const removeFromList = (item) => {
@@ -51,7 +53,7 @@ function CategoryContent({
     setItemsInCart([...itemsInCart, item]);
   };
 
-  if (!data[category]) return <div>loading</div>;
+  // if (!data[category]) return <div>loading</div>;
 
   // const deleteItem = async (e) => {
   //   await axios.delete(`${baseURL}/stock-up`, config);
@@ -61,7 +63,6 @@ function CategoryContent({
 
   return (
     <div>
-      <h2>Shopping List:</h2>
       <List
         itemLayout="horizontal"
         dataSource={data[category]}

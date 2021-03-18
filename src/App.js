@@ -46,8 +46,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <CategoryTabs />
+      <h2>Shopping List:</h2>
       <div id="shopping-list">
-        <CategoryTabs />
         <Route path="/category/:category">
           <CategoryContent
             setItemsInCart={setItemsInCart}
@@ -68,6 +69,7 @@ function App() {
           />
         </Route>
       </div>
+      <hr />
       <Route path="/category/:category/edit/:id">
         <EditForm
           setToggleFetch={setToggleFetch}
