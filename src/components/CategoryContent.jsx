@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams, useHistory } from "react-router-dom";
@@ -6,14 +5,7 @@ import { baseURL, config } from "../services";
 import { Checkbox, List } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
-function CategoryContent({
-  data,
-  setData,
-  setItemsInCart,
-  itemsInCart,
-  toggleFetch,
-  setToggleFetch,
-}) {
+function CategoryContent({ data, setData, setItemsInCart, itemsInCart }) {
   const { category } = useParams();
   const history = useHistory();
 
@@ -63,7 +55,7 @@ function CategoryContent({
   // };
 
   return (
-    <div>
+    <div id="category-content">
       <List
         className="unordered-list"
         itemLayout="horizontal"
@@ -83,13 +75,13 @@ function CategoryContent({
               </span>
             </Checkbox>
             <Link to={`/category/${category}/edit/${item.id}`}>
-              <button>edit</button>
+              <button id="edit-button">edit</button>
             </Link>
           </List.Item>
         )}
       />
       <Link to={`/category/${category}/new`}>
-        <button>
+        <button id="add-item-button">
           <PlusOutlined />
           add item
         </button>

@@ -10,9 +10,9 @@
 
 #shopping-list, #shopping-cart {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* flex-wrap: wrap; */
-  align-items: center;
+  justify-content: center;
   /* border: solid grey 1px; */
   /* max-height: 200px; */
   margin-top: 15px;
@@ -22,7 +22,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 200px;
+  height: auto;
+  min-height: 300px;
 }
 
 .list-item {
@@ -59,4 +60,60 @@ h2 {
 
 .category-names {
   font-size: 20px;
+}
+
+#add-item-button {
+  border: none;
+  background-color: white;
+  color: rgb(104, 104, 104);
+  margin-left: 35px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#edit-button {
+  border: none;
+  background-color: white;
+  color: rgb(104, 104, 104);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#category-content {
+  text-align: left;
+}
+
+hr {
+  width: 90%;
+  background-color: rgb(189, 189, 189);
+  height: 1px;
+  border: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .unordered-list ul {
+    max-height: 600px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h2 {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .unordered-list ul {
+    max-height: none;
+    align-content: left;
+    margin-left: 25px;
+  }
+  .unordered-list li {
+    width: 300px;
+  }
+  #shopping-list, #shopping-cart {
+    justify-content: left;
+  }
+  .category-names {
+    font-size: 17px;
+  }
+
 }

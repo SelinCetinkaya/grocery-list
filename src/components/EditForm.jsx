@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services";
 import axios from "axios";
 
-function EditForm({ toggleFetch, setToggleFetch, data, setData }) {
+function EditForm({ setToggleFetch, data }) {
   const [titleValue, setTitleValue] = useState("");
   const [brandValue, setBrandValue] = useState("");
   const [notesValue, setNotesValue] = useState("");

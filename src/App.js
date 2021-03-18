@@ -35,12 +35,8 @@ function App() {
     setData(reduced);
   };
 
-  // const categoriesArr = Object.entries(categories);
-
   useEffect(() => {
     getItemsInCategory();
-    // console.log(toggleFetch);
-    // console.log(data);
   }, [toggleFetch]);
 
   return (
@@ -78,7 +74,7 @@ function App() {
         </Route>
       </div>
       <hr />
-      <h2>In Cart:</h2>
+      <h2>All Items In Cart:</h2>
       <div id="shopping-cart">
         <ShoppingCart
           data={data}
