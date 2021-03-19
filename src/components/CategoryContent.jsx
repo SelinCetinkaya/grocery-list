@@ -12,6 +12,8 @@ function CategoryContent({
   itemsInCart,
   visible,
   setVisible,
+  visibleEdit,
+  setVisibleEdit,
 }) {
   const { category } = useParams();
 
@@ -58,13 +60,9 @@ function CategoryContent({
     setVisible(true);
   };
 
-  // if (!data[category]) return <div>loading</div>;
-
-  // const deleteItem = async (e) => {
-  //   await axios.delete(`${baseURL}/stock-up`, config);
-  //   setToggleFetch((curr) => !curr);
-  //   console.log(e.target);
-  // };
+  const showEditModal = () => {
+    setVisibleEdit(true);
+  };
 
   return (
     <div id="category-content">
@@ -87,7 +85,9 @@ function CategoryContent({
               </span>
             </Checkbox>
             <Link to={`/category/${category}/edit/${item.id}`}>
-              <button id="edit-button">edit</button>
+              <button onClick={showEditModal} id="edit-button">
+                edit
+              </button>
             </Link>
           </List.Item>
         )}

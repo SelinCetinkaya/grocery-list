@@ -21,6 +21,7 @@ function NewForm({
   const params = useParams();
 
   const handleSubmit = async () => {
+    setConfirmLoading(true);
     const newItem = {
       title: titleValue,
       category: params.category,
@@ -30,16 +31,18 @@ function NewForm({
     };
     console.log(visible);
     await axios.post(`${baseURL}/stock-up`, { fields: newItem }, config);
+    setConfirmLoading(false);
+    setVisible(false);
     setToggleFetch((curr) => !curr);
     // console.log(toggleFetch);
     // history.push(`/category/${params.category}`);
 
-    setModalText("Updating...");
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setVisible(false);
-      setConfirmLoading(false);
-    }, 2000);
+    // setModalText("Updating...");
+    // setConfirmLoading(true);
+    // setTimeout(() => {
+    //   setVisible(false);
+    //   setConfirmLoading(false);
+    // }, 2000);
   };
 
   const handleCancel = () => {

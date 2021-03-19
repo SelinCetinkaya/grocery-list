@@ -1,14 +1,15 @@
-import { Form, Input, Button, Select } from "antd";
+import { Form, Input, Button, Modal } from "antd";
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services";
 import axios from "axios";
 
-function EditForm({ setToggleFetch, data }) {
+function EditForm({ setToggleFetch, data, visibleEdit, setVisibleEdit }) {
   const [titleValue, setTitleValue] = useState("");
   const [brandValue, setBrandValue] = useState("");
   const [notesValue, setNotesValue] = useState("");
-  // const [category, setCategory] = useState("");
+  const [confirmLoading, setConfirmLoading] = useState(false);
+  const [modalText, setModalText] = useState("Content of the modal");
   const { category, id } = useParams();
   const history = useHistory();
 
@@ -25,7 +26,7 @@ function EditForm({ setToggleFetch, data }) {
   }, [id, data]);
 
   const handleSubmit = async () => {
-    console.log(data);
+    setConfirmLoading(true);
     const editedItem = {
       title: titleValue,
       category: category,
@@ -38,8 +39,14 @@ function EditForm({ setToggleFetch, data }) {
       { fields: editedItem },
       config
     );
+    setConfirmLoading(false);
+    setVisibleEdit(false);
     setToggleFetch((curr) => !curr);
-    history.push(`/category/${category}`);
+    // setConfirmLoading(true);
+    // setTimeout(() => {
+    //   setVisibleEdit(false);
+    //   setConfirmLoading(false);
+    // }, 2000);
   };
 
   const deleteItem = async (e) => {
@@ -49,44 +56,54 @@ function EditForm({ setToggleFetch, data }) {
     history.push(`/category/${category}`);
   };
 
+  const handleCancel = () => {
+    console.log("Clicked cancel button");
+    setVisibleEdit(false);
+  };
+
   return (
-    <Form onFinish={handleSubmit}>
-      <Form.Item label="Item" rules={[{ required: true }]}>
-        <Input
-          value={titleValue}
-          onChange={(e) => {
-            setTitleValue(e.target.value);
-          }}
-        />
-      </Form.Item>
-      <Form.Item label="Brand" rules={[{ required: false }]}>
-        <Input
-          value={brandValue}
-          onChange={(e) => {
-            setBrandValue(e.target.value);
-          }}
-        />
-      </Form.Item>
-      <Form.Item label="Notes" rules={[{ required: false }]}>
-        <Input
-          value={notesValue}
-          onChange={(e) => {
-            setNotesValue(e.target.value);
-          }}
-        />
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-        <Button htmlType="delete" onClick={deleteItem}>
-          delete
-        </Button>
-      </Form.Item>
-      <button onClick={() => history.push(`/category/${category}`)}>
-        cancel
-      </button>
-    </Form>
+    <Modal
+      title="Add New Grocery List Item"
+      visible={visibleEdit}
+      onOk={handleSubmit}
+      confirmLoading={confirmLoading}
+      onCancel={handleCancel}
+      okText="Submit"
+    >
+      <p>
+        <Form onFinish={handleSubmit}>
+          <Form.Item label="Item" rules={[{ required: true }]}>
+            <Input
+              value={titleValue}
+              onChange={(e) => {
+                setTitleValue(e.target.value);
+              }}
+            />
+          </Form.Item>
+          <Form.Item label="Brand" rules={[{ required: false }]}>
+            <Input
+              value={brandValue}
+              onChange={(e) => {
+                setBrandValue(e.target.value);
+              }}
+            />
+          </Form.Item>
+          <Form.Item label="Notes" rules={[{ required: false }]}>
+            <Input
+              value={notesValue}
+              onChange={(e) => {
+                setNotesValue(e.target.value);
+              }}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button htmlType="delete" onClick={deleteItem}>
+              delete
+            </Button>
+          </Form.Item>
+        </Form>
+      </p>
+    </Modal>
   );
 }
 
