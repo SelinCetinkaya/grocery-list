@@ -3,18 +3,22 @@ import axios from "axios";
 import { baseURL, config } from "../services";
 import { Checkbox, List } from "antd";
 
-function ShoppingCart({ itemsInCart, setItemsInCart, setData, data }) {
-  const getItemsInCart = async () => {
-    const response = await axios.get(
-      `${baseURL}/stock-up?filterByFormula=%7BisInCart%7D+%3D+1`,
-      config
-    );
-    setItemsInCart(response.data.records);
-  };
-
+function ShoppingCart({
+  itemsInCart,
+  setItemsInCart,
+  setShoppingListData,
+  shoppingListData,
+}) {
   useEffect(() => {
+    const getItemsInCart = async () => {
+      const response = await axios.get(
+        `${baseURL}/stock-up?filterByFormula=%7BisInCart%7D+%3D+1`,
+        config
+      );
+      setItemsInCart(response.data.records);
+    };
     getItemsInCart();
-  }, []);
+  }, [setItemsInCart]);
 
   async function onChange(e) {
     const item = e.target.value;
@@ -33,9 +37,8 @@ function ShoppingCart({ itemsInCart, setItemsInCart, setData, data }) {
 
   const addToData = (item) => {
     const category = item.fields.category;
-    const items = data[category] || [];
-    console.log(data);
-    setData({ ...data, [category]: [...items, item] });
+    const items = shoppingListData[category] || [];
+    setShoppingListData({ ...shoppingListData, [category]: [...items, item] });
   };
 
   return (

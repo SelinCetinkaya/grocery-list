@@ -12,18 +12,10 @@ import EditForm from "./components/EditForm";
 
 function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
-  const [data, setData] = useState({});
+  const [shoppingListData, setShoppingListData] = useState({});
   const [toggleFetch, setToggleFetch] = useState(false);
   const [visible, setVisible] = useState(false);
   const [visibleEdit, setVisibleEdit] = useState(false);
-
-  const getItemsInCategory = async () => {
-    const response = await axios.get(
-      `${baseURL}/stock-up?filterByFormula=%7BisInCart%7D+%3D+0`,
-      config
-    );
-    categoriesReduce(response.data.records);
-  };
 
   const categoriesReduce = (items) => {
     const reduced = items.reduce((acc, item) => {
@@ -34,10 +26,17 @@ function App() {
       return acc;
     }, {});
     console.log(reduced);
-    setData(reduced);
+    setShoppingListData(reduced);
   };
 
   useEffect(() => {
+    const getItemsInCategory = async () => {
+      const response = await axios.get(
+        `${baseURL}/stock-up?filterByFormula=%7BisInCart%7D+%3D+0`,
+        config
+      );
+      categoriesReduce(response.data.records);
+    };
     getItemsInCategory();
   }, [toggleFetch]);
 
@@ -51,8 +50,8 @@ function App() {
           <CategoryContent
             setItemsInCart={setItemsInCart}
             itemsInCart={itemsInCart}
-            setData={setData}
-            data={data}
+            setShoppingListData={setShoppingListData}
+            shoppingListData={shoppingListData}
             setToggleFetch={setToggleFetch}
             toggleFetch={toggleFetch}
             visible={visible}
@@ -65,8 +64,8 @@ function App() {
           <EditForm
             setToggleFetch={setToggleFetch}
             toggleFetch={toggleFetch}
-            setData={setData}
-            data={data}
+            setShoppingListData={setShoppingListData}
+            shoppingListData={shoppingListData}
             visibleEdit={visibleEdit}
             setVisibleEdit={setVisibleEdit}
           />
@@ -74,8 +73,8 @@ function App() {
         <Route path="/category/:category/new">
           <NewForm
             setItemsInCart={setItemsInCart}
-            data={data}
-            setData={setData}
+            setShoppingListData={setShoppingListData}
+            shoppingListData={shoppingListData}
             setToggleFetch={setToggleFetch}
             toggleFetch={toggleFetch}
             visible={visible}
@@ -87,8 +86,8 @@ function App() {
       <h2>All Items In Cart:</h2>
       <div id="shopping-cart">
         <ShoppingCart
-          data={data}
-          setData={setData}
+          setShoppingListData={setShoppingListData}
+          shoppingListData={shoppingListData}
           setItemsInCart={setItemsInCart}
           itemsInCart={itemsInCart}
         />

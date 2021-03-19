@@ -22,7 +22,7 @@ function CategoryTabs() {
   };
 
   return (
-    <div style={{ width: "100%" }} id="tabs">
+    <div id="tabs">
       <Menu
         style={{ width: "100%" }}
         onClick={handleClick}

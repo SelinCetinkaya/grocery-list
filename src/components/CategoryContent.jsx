@@ -1,23 +1,19 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { baseURL, config } from "../services";
 import { Checkbox, List, Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 function CategoryContent({
-  data,
-  setData,
+  shoppingListData,
+  setShoppingListData,
   setItemsInCart,
   itemsInCart,
-  visible,
   setVisible,
-  visibleEdit,
   setVisibleEdit,
 }) {
   const { category } = useParams();
-
-  const history = useHistory();
 
   // const getItemsInCategory = async () => {
   //   if (data[category]) return;
@@ -45,10 +41,10 @@ function CategoryContent({
   }
 
   const removeFromList = (item) => {
-    const items = [...data[category]];
+    const items = [...shoppingListData[category]];
     const index = items.indexOf(item);
     items.splice(index, 1);
-    setData({ ...data, [category]: items });
+    setShoppingListData({ ...shoppingListData, [category]: items });
   };
 
   const addToCart = (item) => {
@@ -69,7 +65,7 @@ function CategoryContent({
       <List
         className="unordered-list"
         itemLayout="horizontal"
-        dataSource={data[category]}
+        dataSource={shoppingListData[category]}
         renderItem={(item) => (
           <List.Item className="list-item">
             <Checkbox
@@ -93,7 +89,7 @@ function CategoryContent({
         )}
       />
       <Link to={`/category/${category}/new`}>
-        <Button type="primary" onClick={showModal}>
+        <Button id="add-item-button" type="primary" onClick={showModal}>
           <PlusOutlined /> Add New Item
         </Button>
       </Link>

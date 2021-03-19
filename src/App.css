@@ -63,12 +63,9 @@ h2 {
 }
 
 #add-item-button {
-  border: none;
-  background-color: white;
-  color: rgb(104, 104, 104);
   margin-left: 35px;
-  font-size: 17px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 #edit-button {

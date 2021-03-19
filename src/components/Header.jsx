@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <div id="header">
+    <header id="header">
       <h1>Stock Up!</h1>
-    </div>
+    </header>
   );
 }
 

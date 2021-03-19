@@ -4,18 +4,24 @@ import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services";
 import axios from "axios";
 
-function EditForm({ setToggleFetch, data, visibleEdit, setVisibleEdit }) {
+function EditForm({
+  setToggleFetch,
+  shoppingListData,
+  visibleEdit,
+  setVisibleEdit,
+}) {
   const [titleValue, setTitleValue] = useState("");
   const [brandValue, setBrandValue] = useState("");
   const [notesValue, setNotesValue] = useState("");
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState("Content of the modal");
   const { category, id } = useParams();
   const history = useHistory();
 
   useEffect(() => {
-    if (id && data[category]) {
-      const groceryItem = data[category].find((item) => item.id === id);
+    if (id && shoppingListData[category]) {
+      const groceryItem = shoppingListData[category].find(
+        (item) => item.id === id
+      );
       console.log(groceryItem);
       if (groceryItem) {
         setTitleValue(groceryItem.fields.title);
@@ -23,7 +29,7 @@ function EditForm({ setToggleFetch, data, visibleEdit, setVisibleEdit }) {
         setNotesValue(groceryItem.fields.notes);
       }
     }
-  }, [id, data]);
+  }, [id, shoppingListData]);
 
   const handleSubmit = async () => {
     setConfirmLoading(true);
@@ -42,11 +48,6 @@ function EditForm({ setToggleFetch, data, visibleEdit, setVisibleEdit }) {
     setConfirmLoading(false);
     setVisibleEdit(false);
     setToggleFetch((curr) => !curr);
-    // setConfirmLoading(true);
-    // setTimeout(() => {
-    //   setVisibleEdit(false);
-    //   setConfirmLoading(false);
-    // }, 2000);
   };
 
   const deleteItem = async (e) => {
@@ -70,39 +71,37 @@ function EditForm({ setToggleFetch, data, visibleEdit, setVisibleEdit }) {
       onCancel={handleCancel}
       okText="Submit"
     >
-      <p>
-        <Form onFinish={handleSubmit}>
-          <Form.Item label="Item" rules={[{ required: true }]}>
-            <Input
-              value={titleValue}
-              onChange={(e) => {
-                setTitleValue(e.target.value);
-              }}
-            />
-          </Form.Item>
-          <Form.Item label="Brand" rules={[{ required: false }]}>
-            <Input
-              value={brandValue}
-              onChange={(e) => {
-                setBrandValue(e.target.value);
-              }}
-            />
-          </Form.Item>
-          <Form.Item label="Notes" rules={[{ required: false }]}>
-            <Input
-              value={notesValue}
-              onChange={(e) => {
-                setNotesValue(e.target.value);
-              }}
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button htmlType="delete" onClick={deleteItem}>
-              delete
-            </Button>
-          </Form.Item>
-        </Form>
-      </p>
+      <Form onFinish={handleSubmit}>
+        <Form.Item label="Item" rules={[{ required: true }]}>
+          <Input
+            value={titleValue}
+            onChange={(e) => {
+              setTitleValue(e.target.value);
+            }}
+          />
+        </Form.Item>
+        <Form.Item label="Brand" rules={[{ required: false }]}>
+          <Input
+            value={brandValue}
+            onChange={(e) => {
+              setBrandValue(e.target.value);
+            }}
+          />
+        </Form.Item>
+        <Form.Item label="Notes" rules={[{ required: false }]}>
+          <Input
+            value={notesValue}
+            onChange={(e) => {
+              setNotesValue(e.target.value);
+            }}
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button type="text" danger htmlType="delete" onClick={deleteItem}>
+            Delete
+          </Button>
+        </Form.Item>
+      </Form>
     </Modal>
   );
 }
