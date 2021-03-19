@@ -83,11 +83,11 @@ This app is meant to be used on a mobile phone so I will be focusing on designin
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|March 12-14| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|March 15| Project Approval | Incomplete
-|March 16| Core Application Structure (HTML, CSS, React Components Created) | Incomplete
-|March 17| Successful GET/POST API Calls | Incomplete
-|March 18| MVP Complete / Begin Post-MVP  | Incomplete
+|March 12-14| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|March 15| Project Approval | Complete
+|March 16| Core Application Structure (HTML, CSS, React Components Created) | Complete
+|March 17| Successful GET/POST API Calls | Complete
+|March 18| MVP Complete / Begin Post-MVP  | Complete
 |March 19| Post-MVP / Styling | Incomplete
 |March 22| Presentations | Incomplete
 
