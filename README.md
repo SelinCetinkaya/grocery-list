@@ -97,19 +97,19 @@ This app is meant to be used on a mobile phone so I will be focusing on designin
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Successful API Calls | H | 2hrs| 2hrs | hrs |
-| Familiarize Self with CSS Framework | M | 3hrs| 1hrs | hrs |
-| Basic Structural CSS | H | 3hrs| 3hrs | hrs |
-| Media Query Styling | H | 3hrs| hrs | hrs |
+| Familiarize Self with CSS Framework | M | 3hrs| 2hrs | hrs |
+| Basic Structural CSS | H | 3hrs| 4hrs | hrs |
+| Media Query Styling | H | 3hrs| 2hrs | hrs |
 | Create Form Component | H | 1.5hrs| 1hrs | hrs |
 | POST Functionality via Form Component | H | 4hrs| 2hrs | hrs |
-| GET Functionality via Form Component | M | 3hrs| hrs | hrs |
-| PUT Functionality via Form Component | H | 4hrs| hrs | hrs |
-| DELETE Functionality via Form Component | H | 3hrs| hrs | hrs |
+| GET Functionality via Form Component | M | 3hrs| 2hrs | hrs |
+| PUT Functionality via Form Component | H | 4hrs| 5hrs | hrs |
+| DELETE Functionality via Form Component | H | 3hrs| 2hrs | hrs |
 | Render Category Tabs to Page | H | 4hrs| 5hrs | hrs |
 | Render Shopping List Items in List to Page | H | 3hrs| 2hrs | hrs |
 | Render Shopping Cart Items List to Page | H | 3hrs| 3hrs | hrs |
 | Functionality to Move Shopping List Items to Shopping Cart List | M | 1hrs| 2hrs | hrs |
-| toggleFetch Functionality | H | 4hrs| 1hrs | hrs |
+| toggleFetch Functionality | H | 4hrs| 3hrs | hrs |
 | Create Header | M | 2hrs| .5hrs | hrs |
 | Total | H | 43.5hrs| hrs | hrs |
 
