@@ -20,7 +20,6 @@ function NewForm({ visible, setVisible, setToggleFetch }) {
       notes: notesValue,
       isInCart: 0,
     };
-    console.log(visible);
     await axios.post(`${baseURL}/stock-up`, { fields: newItem }, config);
     setConfirmLoading(false);
     setVisible(false);

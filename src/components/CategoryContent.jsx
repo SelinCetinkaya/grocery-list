@@ -93,6 +93,7 @@ function CategoryContent({
           <PlusOutlined /> Add New Item
         </Button>
       </Link>
+      <button>delete category</button>
     </div>
   );
 }

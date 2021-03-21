@@ -27,6 +27,8 @@ function EditForm({
         setTitleValue(groceryItem.fields.title);
         setBrandValue(groceryItem.fields.brand);
         setNotesValue(groceryItem.fields.notes);
+      } else {
+        history.push(`/category/${category}`);
       }
     }
   }, [id, shoppingListData]);
@@ -64,7 +66,7 @@ function EditForm({
 
   return (
     <Modal
-      title="Add New Grocery List Item"
+      title="Edit Grocery List Item"
       visible={visibleEdit}
       onOk={handleSubmit}
       confirmLoading={confirmLoading}
