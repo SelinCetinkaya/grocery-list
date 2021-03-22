@@ -53,9 +53,9 @@ function ShoppingCart({
               <span className="list-item-title">{item.fields.title}</span>
               <br />
               <span className="list-item-brand-notes">
-                Brand : {item.fields.brand}
+                {item.fields.brand}
                 <br />
-                Notes: {item.fields.notes}
+                {item.fields.notes}
               </span>
             </Checkbox>
           </List.Item>
