@@ -41,10 +41,7 @@
 #shopping-list, #shopping-cart {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   justify-content: center;
-  /* border: solid grey 1px; */
-  /* max-height: 200px; */
   margin-top: 15px;
 }
 
