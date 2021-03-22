@@ -1,4 +1,3 @@
-//axios call to render category tabs
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useLocation, useHistory } from "react-router-dom";

@@ -42,15 +42,6 @@ function ShoppingCart({
   };
 
   return (
-    // <div id="list">
-    //   {itemsInCart.map((item) => (
-    //     <Checkbox onChange={onChange} checked value={item} key={item.id}>
-    //       {item.fields.title}
-    //       <br /> {item.fields.brand}
-    //       <br /> {item.fields.notes}
-    //     </Checkbox>
-    //   ))}
-    // </div>
     <div>
       <List
         className="unordered-list"
