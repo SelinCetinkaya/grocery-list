@@ -88,7 +88,7 @@ This app is meant to be used on a mobile phone so I will be focusing on designin
 |March 16| Core Application Structure (HTML, CSS, React Components Created) | Complete
 |March 17| Successful GET/POST API Calls | Complete
 |March 18| MVP Complete / Begin Post-MVP  | Complete
-|March 19| Post-MVP / Styling | Incomplete
+|March 19| Post-MVP / Styling | Complete
 |March 22| Presentations | Incomplete
 
 ## Timeframes
@@ -96,22 +96,22 @@ This app is meant to be used on a mobile phone so I will be focusing on designin
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Successful API Calls | H | 2hrs| 2hrs | hrs |
-| Familiarize Self with CSS Framework | M | 3hrs| 2hrs | hrs |
-| Basic Structural CSS | H | 3hrs| 4hrs | hrs |
-| Media Query Styling | H | 3hrs| 2hrs | hrs |
-| Create Form Component | H | 1.5hrs| 1hrs | hrs |
-| POST Functionality via Form Component | H | 4hrs| 2hrs | hrs |
-| GET Functionality via Form Component | M | 3hrs| 2hrs | hrs |
-| PUT Functionality via Form Component | H | 4hrs| 5hrs | hrs |
-| DELETE Functionality via Form Component | H | 3hrs| 2hrs | hrs |
-| Render Category Tabs to Page | H | 4hrs| 5hrs | hrs |
-| Render Shopping List Items in List to Page | H | 3hrs| 2hrs | hrs |
-| Render Shopping Cart Items List to Page | H | 3hrs| 3hrs | hrs |
-| Functionality to Move Shopping List Items to Shopping Cart List | M | 1hrs| 2hrs | hrs |
-| toggleFetch Functionality | H | 4hrs| 3hrs | hrs |
-| Create Header | M | 2hrs| .5hrs | hrs |
-| Total | H | 43.5hrs| hrs | hrs |
+| Successful API Calls | H | 2hrs| 2hrs | 2hrs |
+| Familiarize Self with CSS Framework | M | 3hrs| 2hrs | 2hrs |
+| Basic Structural CSS | H | 3hrs| 4hrs | 4hrs |
+| Media Query Styling | H | 3hrs| 2hrs | 2hrs |
+| Create Form Component | H | 1.5hrs| 1hrs | 1hrs |
+| POST Functionality via Form Component | H | 4hrs| 3hrs | 3hrs |
+| GET Functionality via Form Component | M | 3hrs| 2hrs | 2hrs |
+| PUT Functionality via Form Component | H | 4hrs| 5hrs | 5hrs |
+| DELETE Functionality via Form Component | H | 3hrs| 3hrs | 3hrs |
+| Render Category Tabs to Page | H | 4hrs| 5hrs | 5hrs |
+| Render Shopping List Items in List to Page | H | 3hrs| 2hrs | 2hrs |
+| Render Shopping Cart Items List to Page | H | 3hrs| 3hrs | 3hrs |
+| Functionality to Move Shopping List Items to Shopping Cart List | M | 1hrs| 2hrs | 2hrs |
+| toggleFetch Functionality | H | 4hrs| 3hrs | 3hrs |
+| Create Header | M | 2hrs| .5hrs | .5hrs |
+| Total | H | 43.5hrs| 39.5hrs | 39.5hrs |
 
 ## SWOT Analysis
 
