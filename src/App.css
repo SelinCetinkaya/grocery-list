@@ -25,6 +25,12 @@
   margin: 0;
 }
 
+#delete-button {
+  display: inline;
+  width: 5px;
+  height: 5px;
+}
+
 #header {
   background-color: rgb(193, 217, 230);
   text-align: center;

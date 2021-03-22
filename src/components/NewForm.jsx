@@ -1,6 +1,6 @@
 import { Form, Input, Modal } from "antd";
 import { useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { baseURL, config } from "../services";
 import axios from "axios";
 
@@ -27,7 +27,6 @@ function NewForm({ visible, setVisible, setToggleFetch }) {
   };
 
   const handleCancel = () => {
-    console.log("Clicked cancel button");
     setVisible(false);
   };
 

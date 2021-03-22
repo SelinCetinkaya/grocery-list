@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
 import { baseURL, config } from "./services";
 import axios from "axios";
@@ -25,7 +25,6 @@ function App() {
       acc[item.fields.category].push(item);
       return acc;
     }, {});
-    console.log(reduced);
     setShoppingListData(reduced);
   };
 
@@ -42,7 +41,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Switch> */}
       <Header />
       <div id="shopping-list-container">
         <CategoryTabs visible={visible} setVisible={setVisible} />
@@ -100,7 +98,6 @@ function App() {
           />
         </div>
       </div>
-      {/* </Switch> */}
     </div>
   );
 }

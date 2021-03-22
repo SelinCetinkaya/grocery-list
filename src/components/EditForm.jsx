@@ -22,7 +22,6 @@ function EditForm({
       const groceryItem = shoppingListData[category].find(
         (item) => item.id === id
       );
-      console.log(groceryItem);
       if (groceryItem) {
         setTitleValue(groceryItem.fields.title);
         setBrandValue(groceryItem.fields.brand);
@@ -31,7 +30,7 @@ function EditForm({
         history.push(`/category/${category}`);
       }
     }
-  }, [id, shoppingListData]);
+  }, [id, shoppingListData, history, category]);
 
   const handleSubmit = async () => {
     setConfirmLoading(true);
@@ -60,7 +59,6 @@ function EditForm({
   };
 
   const handleCancel = () => {
-    console.log("Clicked cancel button");
     setVisibleEdit(false);
   };
 

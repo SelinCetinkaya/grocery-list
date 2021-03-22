@@ -15,23 +15,6 @@ function CategoryContent({
 }) {
   const { category } = useParams();
 
-  // const getItemsInCategory = async () => {
-  //   if (data[category]) return;
-  //   const response = await axios.get(
-  //     `${baseURL}/stock-up?filterByFormula=%7Bcategory%7D+%3D+%22${category}%22`,
-  //     config
-  //   );
-  //   const items = response.data.records.filter((item) => !item.fields.isInCart);
-  //   console.log(items);
-  //   setData({ ...data, [category]: items });
-  // };
-
-  // useEffect(() => {
-  //   getItemsInCategory();
-  //   console.log(toggleFetch);
-  //   console.log(data);
-  // }, [category, toggleFetch]);
-
   async function onChange(e) {
     const item = e.target.value;
     removeFromList(item);
@@ -48,7 +31,6 @@ function CategoryContent({
   };
 
   const addToCart = (item) => {
-    console.log(item);
     setItemsInCart([...itemsInCart, item]);
   };
 
@@ -93,7 +75,6 @@ function CategoryContent({
           <PlusOutlined /> Add New Item
         </Button>
       </Link>
-      <button>delete category</button>
     </div>
   );
 }

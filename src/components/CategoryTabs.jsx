@@ -1,10 +1,10 @@
 //axios call to render category tabs
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services";
-import { Menu, Form, Input, Modal } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import { Menu, Form, Input, Modal, Button, Popconfirm } from "antd";
+import { PlusOutlined, CloseSquareOutlined } from "@ant-design/icons";
 
 function CategoryTabs() {
   const [categories, setCategories] = useState([]);
@@ -12,8 +12,8 @@ function CategoryTabs() {
   const [current, setCurrent] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [categoryValue, setCategoryValue] = useState("");
-  const [confirmLoading, setConfirmLoading] = useState(false);
   const { pathname } = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     const getCategories = async () => {
@@ -35,6 +35,12 @@ function CategoryTabs() {
     setIsModalVisible(true);
   };
 
+  const deleteCategory = async (id) => {
+    await axios.delete(`${baseURL}/categories/${id}`, config);
+    history.push("/");
+    setCategoryToggleFetch(!categoryToggleFetch);
+  };
+
   const MenuItemContent = ({ category }) => {
     if (category.id === "add") {
       return (
@@ -45,20 +51,32 @@ function CategoryTabs() {
       );
     } else {
       return (
-        <Link to={`/category/${category.fields.name}`}>
-          {category.fields.name}
-        </Link>
+        <div>
+          <Link to={`/category/${category.fields.name}`}>
+            {category.fields.name}
+          </Link>
+          <Popconfirm
+            title="Are you sure to delete this category?"
+            onConfirm={() => {
+              deleteCategory(category.id);
+            }}
+            okText="Yes"
+            cancelText="No"
+          >
+            <Button type="text" id="delete-button">
+              <CloseSquareOutlined />
+            </Button>
+          </Popconfirm>
+        </div>
       );
     }
   };
 
-  const handleSubmit = async (e) => {
-    setConfirmLoading(true);
+  const handleSubmit = async () => {
     const newCategory = {
       name: categoryValue,
     };
     await axios.post(`${baseURL}/categories`, { fields: newCategory }, config);
-    setConfirmLoading(false);
     setIsModalVisible(false);
     setCategoryToggleFetch((curr) => !curr);
   };
